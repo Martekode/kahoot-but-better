@@ -1,10 +1,13 @@
 import './Header.css';
-import React, {useState} from 'react';
+import React, {useEffect , useState} from 'react';
 
     
 function Header() {
     const [title, setTitle] = useState("Quiz");
     const [isClicked , setIsClicked] = useState(false);
+    useEffect(() => {
+        console.log("Title changed to: " +  title);
+    }, [title]);
     
     return (
         <div className={"header"}>

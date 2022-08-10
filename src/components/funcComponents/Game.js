@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Question from './Question';
 
 function Game(){
-    const url = "https://opentdb.com/api.php?amount=10&category=20&encode=url3986";
+    const url = "https://opentdb.com/api.php?amount=10&category=20";
 
     const [result , setResult] = useState([]);
 //something seems awfully hardcoded here, if only the user could change these settings!

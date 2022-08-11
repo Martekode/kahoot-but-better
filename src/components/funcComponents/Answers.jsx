@@ -26,8 +26,8 @@ class Answers extends React.Component{
     render(){
         return (
         <ul>
-            {this.state.allAnswers.map(answer =>{
-                return <li>{answer}</li>
+            {this.state.allAnswers.map((answer,i) =>{
+                return <li key={i}>{answer}</li>
             })}
         </ul>
         )

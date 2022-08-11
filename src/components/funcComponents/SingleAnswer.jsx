@@ -1,4 +1,5 @@
 import React from "react";
+import { decode } from "html-entities";
 class SingleAnswer extends React.Component{
     constructor(props){
         super(props);
@@ -61,7 +62,7 @@ class SingleAnswer extends React.Component{
     render(){
         return (
             <li onMouseEnter={this.enter} onMouseLeave={this.leave} style={this.state.hover ? this.state.styles.listStyleHover : this.state.styles.listStyle}>
-                <p>{this.props.answer}</p>
+                <p>{decode(this.props.answer)}</p>
                 <p style={this.state.hover ? this.state.styles.selectedStyle : this.state.styles.noSelectStyle}>{this.state.hover ? "select" : "no select"}</p>
             </li>
         );

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { decode } from 'html-entities';
+import Answers from './Answers';
 
 function Question(props){
     const [questionText, setQuestionText] = useState(""); 
@@ -14,15 +15,14 @@ function Question(props){
     }
 
     useEffect(() => {
-        // .from(b64, "base64").toString();
-        let questionAsSTRING = decode(props.question);
+        let questionAsSTRING = decode(props.question.question);
         setQuestionText(questionAsSTRING);
-        console.log(questionAsSTRING);
     }, [questionText])
 
     return (
         <div style={divstyle}>
             <h1>{questionText}</h1>
+            <Answers answer={props.question}/>
         </div>
     );
 }

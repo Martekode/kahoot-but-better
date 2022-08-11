@@ -1,4 +1,5 @@
 import React from "react";
+import { decode } from "html-entities";
 class Answers extends React.Component{
 
     constructor(props){
@@ -6,7 +7,22 @@ class Answers extends React.Component{
         this.state={
             correctAnswer : <li>{this.props.answer.correct_answer}</li>,
             incorrectAnswers : this.props.answer.incorrect_answers,
-            allAnswers : this.merge(this.props.answer.correct_answer,this.props.answer.incorrect_answers)
+            allAnswers : this.merge(this.props.answer.correct_answer,this.props.answer.incorrect_answers),
+            divStyle : {
+                color: "yellow",
+                display : "felx",
+                flexDirection:"row",
+                flexWrap: "wrap",
+                border: "1px solid yellow",
+                borderRadius: "10px"
+            },
+            listStyle: {
+                display: "inline-block",
+                width:"20%",
+                textAlign:"center",
+                margin:"0",
+                marginLeft:"5%"
+            }
         }
     }
     merge(a,b){
@@ -25,9 +41,12 @@ class Answers extends React.Component{
     
     render(){
         return (
-        <ul>
+        <ul style={this.state.divStyle}>
             {this.state.allAnswers.map((answer,i) =>{
-                return <li key={i}>{answer}</li>
+                return <li style={this.state.listStyle} key={i}>
+                    <label htmlFor="checkies">{decode(answer)}</label>
+                    <br/><input type="checkbox" name = "checkies" value={decode(answer)}/>
+                    </li>
             })}
         </ul>
         )

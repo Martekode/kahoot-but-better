@@ -10,7 +10,7 @@ function Game(){
     const getQuestions = async () => {
         const res = await  fetch(url);
         const data = await res.json();
-        console.log(data.results);
+        //console.log(data.results);
         setResult(data.results);
     }
     return (
@@ -19,7 +19,8 @@ function Game(){
             <div className={'Questions'}>
                 {
                 result.map((question, i) => {
-                    return <Question question={question.question} key={i}/>
+                    //console.log(question);
+                    return <Question question={question} key={i}/>
                 })}
             </div>
         </div>

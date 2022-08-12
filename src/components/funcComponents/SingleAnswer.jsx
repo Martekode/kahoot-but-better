@@ -1,5 +1,6 @@
 import React from "react";
 import { decode } from "html-entities";
+import { useSelector } from "react-redux/es/exports";
 class SingleAnswer extends React.Component{
     constructor(props){
         super(props);

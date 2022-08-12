@@ -59,9 +59,16 @@ class SingleAnswer extends React.Component{
         this.setState({hover : false,});
     }
 
+    placeStyling(hover){
+        if(!hover){
+            return this.state.styles.listStyle;
+        }else{
+            return this.state.styles.listStyleHover;
+        }
+    }
     render(){
         return (
-            <li onMouseEnter={this.enter} onMouseLeave={this.leave} style={this.state.hover ? this.state.styles.listStyleHover : this.state.styles.listStyle}>
+            <li onMouseEnter={this.enter} onMouseLeave={this.leave} style={this.placeStyling(this.state.hover)}>
                 <p>{decode(this.props.answer)}</p>
                 <p style={this.state.hover ? this.state.styles.selectedStyle : this.state.styles.noSelectStyle}>{this.state.hover ? "select" : "no select"}</p>
             </li>

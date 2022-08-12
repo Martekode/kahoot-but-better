@@ -23,7 +23,7 @@ function Game(){
                     return <Question question={question} key={i}/>
                 })}
             </div>
-            <button>submit</button>
+            <button className="submit-answers">submit</button>
         </div>
     );
 }

@@ -36,16 +36,14 @@ class SingleAnswer extends React.Component{
                     borderRadius:"10px",
                     width: "40%",
                     marginLeft:"30%",
-                    height: "30%",
-                    paddingTop:"1em"
+                    height: "30%"
                 },
                 selectedStyle:{
                     backgroundColor : "lightgreen",
                     borderRadius:"10px",
                     width: "40%",
                     marginLeft:"30%",
-                    height: "30%",
-                    paddingTop:"1em"
+                    height: "30%"
                 }
             }
         }
@@ -85,6 +83,9 @@ class SingleAnswer extends React.Component{
             return this.state.styles.selectedStyle;
         }
     }
+    handleClick = value => () => {
+        console.log(value);
+    };
     render(){
         return (
             <li onClick={this.click} onMouseEnter={this.enter} onMouseLeave={this.leave} style={this.placeStylingLi(this.state.hover,this.state.clicker)}>

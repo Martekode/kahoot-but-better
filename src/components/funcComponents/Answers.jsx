@@ -1,5 +1,4 @@
 import React from "react";
-import { decode } from "html-entities";
 import SingleAnswer from "./SingleAnswer";
 class Answers extends React.Component{
 

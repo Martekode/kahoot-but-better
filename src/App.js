@@ -5,7 +5,7 @@ import Game from './components/funcComponents/Game';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Header/>
       <header className="App-header">
         <Game/>
